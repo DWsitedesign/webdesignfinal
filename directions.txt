@@ -1,0 +1,7 @@
+#############Website Final###############
+Unzip the folder where node.js and npm is installed.
+Run npm install to install the needed packages and dependencies for the project.
+
+npm start <- start the nodejs server
+
+go to localhost:3000 to see the website.

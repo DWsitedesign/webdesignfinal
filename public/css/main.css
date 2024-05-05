@@ -1,0 +1,552 @@
+/*Reset rule*/
+*, body, nav, div, ul, p, img {
+    margin: 0;
+    padding: 0;
+}
+
+
+nav ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+header > div.row {
+    align-items: center;
+    padding: 0 15px;
+    height: 100%;
+}
+
+header .onPage {
+    border-bottom: black 3px solid;
+}
+
+header {
+    z-index: 8;
+    background-color: #a03e3e;
+    position: absolute;
+    width: 100%;
+    height: 97px;
+}
+
+header .logo {
+    max-width: 100px;
+    border-radius: 15px;
+}
+
+.navbuttons {
+    justify-content: space-between;
+    font-size: 2em;
+    width: 100%;
+}
+
+.navbuttons > li {
+    padding: 15px;
+}
+.navbuttons > li:hover {
+    background-color: #823535;
+    border-radius: 25px;
+}
+
+
+/*Dropdown menu*/
+.toggle_btn {
+    color: #ffffff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.dropdown_menu {
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 3;
+    transition: height.3s cubic-bezier(0.175, .885, .32, 1.275);
+}
+
+.dropdown_menu.open {
+    height: 250px;
+
+}
+
+.dropdown_menu div {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.dropdown_menu .action_btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+@media (max-width: 1000px) {
+    .desktopView{
+        display: none;
+    }
+    header .onPage{
+        border: none;
+    }
+    .toggle_btn, .dropdown_menu{
+        display: block;
+    }
+}
+@media (max-width: 576px) {
+    .dropdown_menu{
+        left:2rem;
+        width: unset;
+    }
+}
+
+
+main {
+    max-width: 75%;
+    padding-top: 148px;
+    min-height: calc(100vh - 148px - 66px);
+    margin: 0 auto;
+}
+
+/*officers begin*/
+/*.row.officerPos {*/
+/*    justify-content: center;*/
+/*    margin-bottom: 25px;*/
+/*}*/
+
+.row.officerPos > div:first-child {
+    margin-right: 20px;
+}
+
+.officerPos > div > img {
+    width: 100%;
+    position: absolute;
+    /*top: -100%; left:0;right:0;bottom: -100%;*/
+}
+
+.officerImage {
+    border: black 3px solid;
+    border-radius: 20px;
+    height: 200px;
+    width: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.officerWords {
+    width: 50%;
+}
+
+.officerWords h2 {
+    font-size: 2em;
+}
+
+.officerWords h3 {
+    font-size: 1.4em;
+}
+.officerWords p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+.officerWords p a, .contactDate p a {
+    color: black;
+}
+.title {
+    text-align: center;
+    font-size: 2em;
+}
+.subtitle {
+    font-size: 1.5em;
+}
+.officerReq{
+    margin: 15px auto;
+}
+.officerReq>.subtitle{
+    margin: 10px 0;
+}
+ul.listIndent{
+    margin-left: 20px;
+}
+.join-loginbtn{
+    padding: 6px 30px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+.marginb{
+    margin-bottom: 20px;
+}
+.row.officerPos{
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+.row.officerPos > div.officerImage{
+    margin: 0 auto;
+}
+.officerWords{
+    width: 100%;
+}
+.officerWords >div {
+    text-align: center;
+}
+/*@media (max-width: 600px) {*/
+/*    */
+/*}*/
+
+/*officers end*/
+/*About start*/
+.aboutRocket {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.section.mission>h3{
+    border-bottom: 3px solid #000;
+    margin-bottom: 15px;
+}
+.section {
+    margin-bottom: 20px;
+}
+
+.aboutRocket img {
+    max-width: 100%;
+    max-height: 500px;
+    border: black 5px solid;
+    border-radius: 20px;
+}
+
+.section h3 {
+    font-size: 2em;
+    text-align: center;
+}
+
+/* For member section */
+.memberList{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.memberImage {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    margin: 15px;
+    border-radius: 15%;
+    position: relative;
+}
+.memberImage>p{
+    position: absolute;
+    display: none;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    padding: 15px 0;
+    color: #fff;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+
+}
+.memberImage:hover >p{
+    display: block;
+}
+.memberImage>img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.missionImage{
+    position: relative;
+}
+.missionImage > .missionWords{
+    position: absolute;
+    left: 0;
+    bottom: 20%;
+    font-size: min(10vw, 9rem);
+    text-align: center;
+    width: 100%;
+}
+
+/*About end*/
+/*Index begin*/
+#spaceHolder {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    padding-top: 97px;
+    min-height: calc(100vh - 97px - 66px);
+    background-image: url("/images/space.jpg");
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the image */
+    background-attachment: fixed; /* Fix the background image */
+}
+main>#space {
+    height: calc(100vh - 97px - 66px);
+    width: 100%;
+    display: block;
+}
+
+.webgl
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#spaceHolder .section
+{
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    font-family: 'Cabin', sans-serif;
+    color: #ffeded;
+    text-transform: uppercase;
+    font-size: 7vmin;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+#spaceHolder .section div {
+    background-color: rgba(0, 0, 0, 0.51);
+    border-radius: 20px;
+    max-width: 50%;
+    padding: 20px;
+}
+#spaceHolder .section p {
+    font-size: 1rem;
+}
+
+section:nth-child(Even)
+{
+    justify-content: flex-end;
+}
+
+/*Contact page*/
+#contactBody,#contactBody>div>form>div.submitBtn,.row.joinbtn{
+    display: flex;
+    justify-content: center;
+}
+#contactBody>div>form>div{
+    margin: 15px 0;
+    display: flex;
+    justify-content: space-between;
+}
+#contactBody>div>form{
+    background-color: #a5a5a5;
+    border-radius: 20px;
+    padding: 20px;
+}
+#contactBody>div>form>h1{
+    text-align: center;
+}
+.textHolder{
+    flex-grow: 1;
+}
+.textHolder textarea{
+    width: 100%;
+    min-height: 75px;
+}
+
+
+/*Contact End*/
+
+/*Activities Begin*/
+#events{
+    display: flex;
+    flex-direction: column;
+}
+.eventSection{
+    height: 100%;
+    background-color: #b6b6b6;
+    /*padding-bottom: 25px;*/
+    border-radius: 15px;
+    margin-bottom: 20px;
+    transition: height 0.3s ease;
+}
+.eventSectionHeader{
+    font-size: 1.5em;
+    background-color: #7f7f7f;
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.event{
+    padding: 20px;
+    background-color: #d0d0d0;
+    border-radius: 15px;
+    margin: 20px;
+}
+.event>.eventData{
+    display: flex;
+    justify-content: start;
+    margin: 10px 0;
+}
+.event>.eventData>p,.eventData>p.eventLike>i{
+    padding: 0 15px;
+}
+.eventData>p.eventLike>i{
+    cursor: pointer;
+}
+.event>.eventData>p:first-of-type{
+    padding: 0;
+    padding-right: 15px;
+}
+
+.eventSection.eventFold {
+    height: 65px;
+    overflow: hidden;
+}
+
+/*Activities Eng*/
+
+/*modals*/
+.modals {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+    position: fixed;
+    justify-content: center;
+    top:0;
+    left: 0;
+    align-items: center;
+}
+.modals.open{
+    display: flex;
+}
+.modals>form {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 25px;
+    min-width: 90px;
+    min-height: 100px;
+    font-size: 1.4rem;
+    position: relative;
+}
+.modals>form>div>div{
+    padding: 10px;
+}
+#loginError {
+    text-align: center;
+    background-color: rgba(255, 0, 0, 0.52);
+    border-radius: 15px;
+    padding: 10px;
+}
+.clickcursor{
+    cursor: pointer;
+}
+
+.modals>form div>button {
+    width: 100%;
+    padding: 10px;
+    background-color: #a03e3e;
+    border-radius: 20px;
+    color: white;
+    /*font-size: 1.2em;*/
+}
+.modals>form div>button:hover{
+    background-color: #823535;
+}
+.modals>form div>.joinModal{
+    font-size: 1rem;
+}
+.no-scroll{
+    overflow: hidden;
+}
+#loginM.modalOpen,#joinM.modalOpen{
+    display: block;
+}
+#loginM,#joinM{
+    display: none;
+}
+.formHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*modals*/
+/*index end*/
+
+/*DashBoard Begin*/
+.dashboardrow {
+    display: flex;
+    justify-content: left;
+}
+
+.dashboardrow div:last-child{
+    flex-grow: 1;
+}
+.buttonSidebar{
+    margin: 0 50px;
+}
+.buttonSidebar button{
+    width: 100%;
+    margin: 10px;
+}
+
+.contactDate{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.rightBtn{
+    display: flex;
+    justify-content: right;
+}
+.hide {
+    display: none;
+}
+div.show{
+    display: block;
+}
+
+.contactBody {
+    margin: 20px 0;
+    background: #7f7f7f;
+    padding: 25px;
+    border-radius: 20px;
+}
+.rightBtn button{
+    padding: 5px;
+    border-radius: 10px;
+}
+.userProfile{
+    max-width: 250px;
+}
+/*DashBoard End*/
+
+/*Footer*/
+footer {
+    position: relative;
+    z-index: 8;
+    padding: 15px;
+    background-color: #a03e3e;
+}
+
+footer div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

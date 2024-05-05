@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <title>Rocket Club</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+<header>
+    <div class="row">
+        <div>
+            <img class="logo" src="images" alt="Rocket Logo">
+        </div>
+        <nav>
+            <ul class="row navbuttons desktopView">
+                <li><a class="onPage" href="index.html">Home</a></li>
+                <li><a href="officers.html">Officers</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contactus.html">Contact&nbsp;Us</a></li>
+                <li><a href="activities.html">Activities</a></li>
+                <li><a href="#" class="modalLogin">Login/Join</a></li>
+            </ul>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+    </div>
+    <div class="dropdown_menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="officers.html">Officers</a></li>
+        <li><a class="onPage" href="about.html">About</a></li>
+        <li><a href="contactus.html">Contact&nbsp;Us</a></li>
+        <li><a href="activities.html">Activities</a></li>
+        <li><a href="#" class="modalLogin">Login/Join</a></li>
+    </div>
+</header>
+<main id="spaceHolder">
+    <canvas id="space"></canvas>
+    <script>
+        const canvas = document.getElementById('space');
+
+        // Create a renderer and specify the canvas as the render target
+        const renderer = new THREE.WebGLRenderer({ canvas });
+
+        // Set the renderer size based on the canvas size
+        renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+
+        // Create a scene
+        const scene = new THREE.Scene();
+
+        // Create a camera
+        const camera = new THREE.PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
+        camera.position.z = 5;
+
+        // Create a cube
+        const cubeSize = 1;
+        const geometry = new THREE.BoxGeometry(cubeSize, cubeSize, cubeSize);
+        const material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // White color
+        const cube = new THREE.Mesh(geometry, material);
+        scene.add(cube);
+
+        // Add animation
+        function animate() {
+            requestAnimationFrame(animate);
+
+            // Rotate the cube
+            cube.rotation.x += 0.01;
+            cube.rotation.y += 0.01;
+
+            renderer.render(scene, camera);
+        }
+
+        animate();
+
+    </script>
+    <div class="modals">
+        <form>
+            <div id="loginM" class="modalOpen">
+                <div class="formHeader">
+                    <h2>Sign in</h2>
+                    <i class="closeModal clickcursor fa-solid fa-x"></i>
+                </div>
+                <div>
+
+                    <div>
+                        <label for="user">Username</label>
+                    </div>
+                    <div>
+                        <input required id="user" name="user" type="text">
+                    </div>
+                </div>
+                <div>
+
+                    <div>
+                        <label for="sauce">Password</label>
+                    </div>
+                    <div>
+                        <input required id="sauce" name="sauce" type="password">
+                    </div>
+                    <div>
+                        <p class="clickcursor">forgot your password?</p>
+                    </div>
+                </div>
+                <div>
+                    <button type="button" class="clickcursor">Sign in</button>
+                    <span class="clickcursor joinModal">Join now</span>
+                </div>
+            </div>
+            <div id="joinM">
+                <div class="formHeader">
+                    <h2>Sign Up</h2>
+                    <i class="closeModal clickcursor fa-solid fa-x"></i>
+                </div>
+                <div>
+
+                    <div>
+                        <label for="newName">Name</label>
+                    </div>
+                    <div>
+                        <input required id="newName" name="newName" type="text">
+                    </div>
+                </div>
+                <div>
+
+                    <div>
+                        <label for="newUser">Username</label>
+                    </div>
+                    <div>
+                        <input required id="newUser" name="newUser" type="text">
+                    </div>
+                </div>
+                <div>
+
+                    <div>
+                        <label for="newEmail">Email</label>
+                    </div>
+                    <div>
+                        <input required id="newEmail" name="newEmail" type="email">
+                    </div>
+                </div>
+                <div>
+
+                    <div>
+                        <label for="newSauce">Password</label>
+                    </div>
+                    <div>
+                        <input required id="newSauce" name="newSauce" type="password">
+                    </div>
+                </div>
+                <div>
+                    <button type="button" class="clickcursor">Sign up</button>
+                    <span class="clickcursor joinModal">Login</span>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</main>
+<footer>
+    <div>
+        <p>&copy; Copyright 2024. All Rights Reserved.</p>
+        <p><a href="mailto:251849@student.cofo.edu">251849@student.cofo.edu</a></p>
+    </div>
+    <script src="js/modalControls.js"></script>
+</footer>
+</body>
+</html>

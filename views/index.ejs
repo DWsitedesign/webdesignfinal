@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>Rocket Club</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r126/three.min.js" integrity="sha512-n8IpKWzDnBOcBhRlHirMZOUvEq2bLRMuJGjuVqbzUJwtTsgwOgK5aS0c1JA647XWYfqvXve8k3PtZdzpipFjgg==" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
+</head>
+<body>
+<header>
+    <div class="row">
+        <div>
+            <img class="logo" src="images/rocket.jpg" alt="Rocket Logo">
+        </div>
+        <nav>
+            <ul class="row navbuttons desktopView">
+                <li><a class="onPage" href="index.html">Home</a></li>
+                <li><a href="officers.html">Officers</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contactus.html">Contact&nbsp;Us</a></li>
+                <li><a href="activities.html">Activities</a></li>
+                <%if (!logged) {%>
+                    <li><a href="#" class="modalLogin">Login/Join</a></li>
+                <% } else { %>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="#" id="logout">Logout</a></li>
+                <%}%>
+            </ul>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+    </div>
+    <div class="dropdown_menu">
+        <div><a href="index.html">Home</a></div>
+        <div><a href="officers.html">Officers</a></div>
+        <div><a class="onPage" href="about.html">About</a></div>
+        <div><a href="contactus.html">Contact&nbsp;Us</a></div>
+        <div><a href="activities.html">Activities</a></div>
+        <%if (!logged) {%>
+            <div><a href="#" class="modalLogin">Login/Join</a></div>
+        <% } else { %>
+            <div><a href="dashboard.html">Dashboard</a></div>
+            <div><a href="#" id="logout">Logout</a></div>
+        <%}%>
+    </div>
+</header>
+<main id="spaceHolder">
+    <canvas class="webgl"></canvas>
+
+    <section class="section">
+        <div>
+
+        <h1>Rocket Club</h1>
+        <p>Our mission is to ignite curiosity, inspire creativity, and cultivate a deeper understanding of aerospace engineering and space science among our members and the broader community. Through a range of exciting events, workshops, and projects, we aim to empower individuals to explore the wonders of space and contribute to the future of space exploration.
+        </p>
+        <p>
+            From designing and building high-performance rockets to organizing thrilling launch events and educational outreach activities, our Rocket Club offers a diverse array of opportunities for members to develop technical skills, teamwork, leadership, and a passion for pushing the boundaries of space technology.
+            <a href="about.html">Read More</a>
+        </p>
+        </div>
+    </section>
+    <section class="section">
+        <div>
+        <h2>Our Projects</h2>
+            <p>
+                Our Rocket Club takes pride in a diverse range of exciting projects that showcase our members' innovation, teamwork, and passion for rocketry. From designing and launching high-altitude weather balloons equipped with scientific payloads to constructing and testing small-scale rocket prototypes, each project pushes the boundaries of what's possible in aerospace engineering. We've also delved into aerodynamics simulations, payload delivery systems, and rocket recovery mechanisms, exploring every facet of rocket design and operation. These hands-on projects not only expand our technical skills but also inspire us to dream big and pursue ambitious goals in space exploration.
+                <a href="activities.html">Read More</a>
+            </p>
+        </div>
+    </section>
+    <section class="section">
+        <div>
+            <h2>Contact Us</h2>
+            <p>
+                Contacting our Rocket Club is a gateway to a world of exciting opportunities and experiences in the realm of space exploration and rocketry. Here are a few compelling reasons why reaching out to us can be a game-changer for anyone interested in this field
+                <a href="contactus.html">Contact Us</a>
+            </p>
+        </div>
+    </section>
+
+    <div class="modals">
+        <form>
+            <div id="loginM" class="modalOpen">
+                <div class="formHeader">
+                    <h2>Sign in</h2>
+                    <i class="closeModal clickcursor fa-solid fa-x"></i>
+                </div>
+                <div>
+
+                    <div>
+                        <label for="user">Username</label>
+                    </div>
+                    <div>
+                        <input required id="user" name="user" type="text">
+                    </div>
+                </div>
+                <div>
+
+                    <div>
+                        <label for="sauce">Password</label>
+                    </div>
+                    <div>
+                        <input required id="sauce" name="sauce" type="password">
+                    </div>
+                    <div>
+                        <p class="clickcursor">forgot your password?</p>
+                    </div>
+                </div>
+                <div>
+                    <button type="button" class="clickcursor">Sign in</button>
+                    <span class="clickcursor joinModal">Join now</span>
+                </div>
+            </div>
+            <div id="joinM">
+                <div class="formHeader">
+                    <h2>Sign Up</h2>
+                    <i class="closeModal clickcursor fa-solid fa-x"></i>
+                </div>
+                <div>
+
+                    <div>
+                        <label for="newName">Name</label>
+                    </div>
+                    <div>
+                        <input required id="newName" name="newName" type="text">
+                    </div>
+                </div>
+                <div>
+
+                    <div>
+                        <label for="newUser">Username</label>
+                    </div>
+                    <div>
+                        <input required id="newUser" name="newUser" type="text">
+                    </div>
+                </div>
+                <div>
+
+                    <div>
+                        <label for="newEmail">Email</label>
+                    </div>
+                    <div>
+                        <input required id="newEmail" name="newEmail" type="email">
+                    </div>
+                </div>
+                <div>
+
+                    <div>
+                        <label for="newSauce">Password</label>
+                    </div>
+                    <div>
+                        <input required id="newSauce" name="newSauce" type="password">
+                    </div>
+                </div>
+                <div>
+                    <button type="button" class="clickcursor">Sign up</button>
+                    <span class="clickcursor joinModal">Login</span>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</main>
+<footer>
+    <div>
+        <p>&copy; Copyright 2024. All Rights Reserved.</p>
+        <p><a href="mailto:251849@student.cofo.edu">251849@student.cofo.edu</a></p>
+    </div>
+    <script>
+        /**
+         * Base
+         */
+// Canvas
+        const canvas = document.querySelector('canvas.webgl')
+
+        // Scene
+        const scene = new THREE.Scene()
+
+        /**
+         * Test cube
+         */
+
+            // Create a GLTFLoader instance
+        const loader = new THREE.GLTFLoader();
+
+        let modelScene;
+        // Load the GLTF model
+        loader.load(
+            '/images/3d/scene.gltf',
+            function (gltf) {
+                // Access the loaded model's scene or specific objects
+                const modelScene = gltf.scene;
+
+                // Downsize the model by adjusting its scale
+                modelScene.scale.set(0.3, 0.3, 0.3); // Scale down to 50% of its original size
+
+                // Move the model down along the y-axis
+                modelScene.position.y = -5; // Move down by 1 unit
+                modelScene.position.z = 10; // Move down by 1 unit
+                modelScene.position.x = -8; // Move down by 1 unit
+                modelScene.rotation.z = THREE.MathUtils.degToRad(-20); // 40 degrees on the y-axis
+                modelScene.rotation.x = THREE.MathUtils.degToRad(-80);
+
+                // Add the loaded model to the scene
+                scene.add(modelScene);
+            }
+        );
+
+        /**
+         * Sizes
+         */
+        const sizes = {
+            width: window.innerWidth,
+            height: window.innerHeight
+        }
+
+        window.addEventListener('resize', () =>
+        {
+            // Update sizes
+            sizes.width = window.innerWidth
+            sizes.height = window.innerHeight
+
+            // Update camera
+            camera.aspect = sizes.width / sizes.height
+            camera.updateProjectionMatrix()
+
+            // Update renderer
+            renderer.setSize(sizes.width, sizes.height)
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+        })
+        /**
+         * Lights
+         */
+        const directionalLight = new THREE.DirectionalLight('#ffffff', 2)
+        directionalLight.position.set(5, 15, 5)
+        scene.add(directionalLight)
+
+        /**
+         * Camera
+         */
+// Base camera
+        const camera = new THREE.PerspectiveCamera(35, sizes.width / sizes.height, 0.1, 100)
+        camera.position.z = 10
+        // camera.rotation.x = -Math.PI / 6
+        scene.add(camera)
+        /**
+         * Renderer
+         */
+        const renderer = new THREE.WebGLRenderer({
+            canvas: canvas,
+            alpha: true
+        })
+        renderer.setClearAlpha(0)
+        renderer.setSize(sizes.width, sizes.height)
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+
+        /**
+         * Animate
+         */
+        const clock = new THREE.Clock()
+
+        /**
+         * Scroll
+         */
+        let scrollY = window.scrollY
+
+        window.addEventListener('scroll', () =>
+        {
+            scrollY = window.scrollY
+
+            console.log(scrollY)
+        })
+
+        const tick = () =>
+        {
+            const elapsedTime = clock.getElapsedTime()
+
+            // Animate camera
+            // camera.position.y = - scrollY / sizes.height
+            camera.position.z = -5 + 2*scrollY / sizes.height
+            camera.position.x = 2-scrollY / sizes.height
+
+
+
+            // Render
+            renderer.render(scene, camera)
+
+            // Call tick again on the next frame
+            window.requestAnimationFrame(tick)
+        }
+
+        tick()
+
+    </script>
+    <script src="js/modalControls.js"></script>
+</footer>
+</body>
+</html>

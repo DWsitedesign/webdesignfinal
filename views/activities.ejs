@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>Rocket Club: Past Activities</title>
+</head>
+<body>
+<header>
+    <div class="row">
+        <div>
+            <img class="logo" src="images/rocket.jpg" alt="Rocket Logo">
+        </div>
+        <nav>
+            <ul class="row navbuttons desktopView">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="officers.html">Officers</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contactus.html">Contact&nbsp;Us</a></li>
+                <li><a class="onPage" href="activities.html">Activities</a></li>
+                <%if (!logged) {%>
+                    <li><a href="#" class="modalLogin">Login/Join</a></li>
+                <% } else { %>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="#" id="logout">Logout</a></li>
+                <%}%>
+            </ul>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+    </div>
+    <div class="dropdown_menu">
+        <div><a href="index.html">Home</a></div>
+        <div><a href="officers.html">Officers</a></div>
+        <div><a class="onPage" href="about.html">About</a></div>
+        <div><a href="contactus.html">Contact&nbsp;Us</a></div>
+        <div><a href="activities.html">Activities</a></div>
+        <%if (!logged) {%>
+            <div><a href="#" class="modalLogin">Login/Join</a></div>
+        <% } else { %>
+            <div><a href="dashboard.html">Dashboard</a></div>
+            <div><a href="#" id="logout">Logout</a></div>
+        <%}%>
+    </div>
+</header>
+<main>
+    <div>
+        <div id="events">
+            <div class="eventSection">
+                <div class="eventSectionHeader">
+                    <p class="eventSectionTitle">Spring 2024</p>
+                    <p><i class="fa-solid fa-caret-down"></i></p>
+                </div>
+                <div class="eventList">
+                    <div class="event">
+                        <h3>Rocket Design and Build Competition</h3>
+                        <div class="eventData">
+                            <p>Date: May 5,2024</p><p>Time: <strong>0000</strong></p>
+                            <p class="eventLike"><i class="fa-regular fa-thumbs-up"></i>
+                                <i class="fa-regular fa-thumbs-down"></i></p>
+                        </div>
+                        <div>The Rocket Design and Build Competition is a thrilling event that challenges participants to unleash their creativity and engineering prowess. Teams or individuals meticulously craft rockets following specific guidelines, from choosing suitable materials to designing efficient propulsion systems. The competition fosters innovation and problem-solving skills as participants tackle challenges such as achieving optimal aerodynamics, stability, and payload capacity. Judges evaluate entries based on criteria like originality, functionality, aesthetics, and the successful launch and recovery of the rocket. This event not only showcases participants' technical abilities but also sparks a passion for rocketry and space exploration.</div>
+
+                    </div>
+                    <div class="event">
+                        <h3>Educational Outreach</h3>
+                        <div class="eventData">
+                            <p>Date: May 3,2024</p><p>Time: <strong>1500</strong></p>
+                            <p class="eventLike"><i class="fa-regular fa-thumbs-up"></i>
+                                <i class="fa-regular fa-thumbs-down"></i></p>
+                        </div>
+                        <div>Our Rocket Club's Educational Outreach Workshops are designed to inspire and educate the next generation of space enthusiasts. We organize engaging sessions for schools and the local community, covering fundamental concepts of rocketry, aerospace engineering, and STEM disciplines. Participants delve into hands-on activities like building and launching model rockets, understanding the principles of thrust and trajectory, and exploring the physics of space travel. These workshops aim to ignite curiosity, promote scientific literacy, and cultivate a deeper appreciation for the wonders of space among learners of all ages.</div>
+
+                    </div>
+                    <div class="event">
+                        <h3>Rocket Launch</h3>
+                        <div class="eventData">
+                            <p>Date: August 15,2024</p><p>Time: <strong>0800</strong></p>
+                            <p class="eventLike"><i class="fa-regular fa-thumbs-up"></i>
+                                <i class="fa-regular fa-thumbs-down"></i></p>
+                        </div>
+                        <div>Rocket Launch Day is the culmination of months of hard work and preparation, where participants eagerly showcase their rocket designs and engineering skills. The event buzzes with excitement as rockets of various shapes, sizes, and propulsion systems take to the skies. Categories such as altitude, payload delivery, or precision landing add a competitive edge, driving teams to optimize their designs and strategies. Spectators marvel at the spectacle of rockets soaring into the atmosphere, symbolizing the boundless human quest for exploration and discovery. Rocket Launch Day is a celebration of innovation, teamwork, and the thrill of pushing boundaries in aerospace technology.</div>
+
+                    </div>
+                    <div class="event">
+                        <h3>Guest Speaker Series 3</h3>
+                        <div class="eventData">
+                            <p>Date: March 28,2024</p><p>Time: <strong>2000</strong></p>
+                            <p class="eventLike"><i class="fa-regular fa-thumbs-up"></i>
+                                <i class="fa-regular fa-thumbs-down"></i></p>
+                        </div>
+                        <div>Imagine a captivating evening with a former astronaut as our guest speaker. Their tales of space exploration, from the exhilarating moments of liftoff to the awe-inspiring views of Earth from orbit, captivate the audience. They share firsthand experiences of living and working in space, shedding light on the challenges and triumphs of life beyond our planet. Their insights into the psychological, physiological, and technical aspects of space travel inspire us to push the boundaries of human exploration and pave the way for future missions to the Moon, Mars, and beyond.</div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="eventSection">
+                <div class="eventSectionHeader">
+                    <p class="eventSectionTitle">Fall 2023</p>
+                    <p><i class="fa-solid fa-caret-down"></i></p>
+                </div>
+                <div class="eventList">
+                    <div class="event">
+                        <h3>Guest Speaker Series 2</h3>
+                        <div class="eventData">
+                            <p>Date: Nov 25, 2023</p><p>Time: <strong>2000</strong></p>
+                            <p class="eventLike"><i class="fa-regular fa-thumbs-up"></i>
+                                <i class="fa-regular fa-thumbs-down"></i></p>
+                        </div>
+                        <div>A renowned aerospace engineer takes the stage, offering a glimpse into the latest advancements shaping the future of space technology. They delve into topics like next-generation rocket propulsion systems, reusable spacecraft, and advancements in materials science for space applications. Their expertise in designing and optimizing spacecraft for efficiency, safety, and performance sparks discussions on the evolving landscape of space travel. As they unveil groundbreaking concepts and projects, attendees gain a deeper understanding of the innovations driving humanity's quest to reach new celestial frontiers.</div>
+
+                    </div>
+                    <div class="event">
+                        <h3>Guest Speaker Series 1</h3>
+                        <div class="eventData">
+                            <p>Date: Oct 15, 2023</p><p>Time: <strong>2000</strong></p>
+                            <p class="eventLike"><i class="fa-regular fa-thumbs-up"></i>
+                                <i class="fa-regular fa-thumbs-down"></i></p>
+                        </div>
+                        <div>An innovative entrepreneur with a passion for space ventures shares their entrepreneurial journey and vision for the space industry. They discuss the intersection of technology, business, and space exploration, highlighting opportunities for startups and investment in space-related initiatives. From commercial space tourism to satellite deployment and asteroid mining, they explore the myriad possibilities that lie ahead. Their entrepreneurial spirit and strategic insights inspire aspiring space entrepreneurs and ignite discussions on the economic and societal impacts of a thriving space economy.</div>
+
+                    </div>
+                    <div class="event">
+                        <h3>Rocket Launch</h3>
+                        <div class="eventData">
+                            <p>Date: Sep 10, 2023</p><p>Time: <strong>0600</strong></p>
+                            <p class="eventLike"><i class="fa-regular fa-thumbs-up"></i>
+                                <i class="fa-regular fa-thumbs-down"></i></p>
+                        </div>
+                        <div>Rocket Launch Day is the culmination of months of hard work and preparation, where participants eagerly showcase their rocket designs and engineering skills. The event buzzes with excitement as rockets of various shapes, sizes, and propulsion systems take to the skies. Categories such as altitude, payload delivery, or precision landing add a competitive edge, driving teams to optimize their designs and strategies. Spectators marvel at the spectacle of rockets soaring into the atmosphere, symbolizing the boundless human quest for exploration and discovery. Rocket Launch Day is a celebration of innovation, teamwork, and the thrill of pushing boundaries in aerospace technology.</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modals">
+        <form>
+            <div id="loginM" class="modalOpen">
+                <div class="formHeader">
+                    <h2>Sign in</h2>
+                    <i class="closeModal clickcursor fa-solid fa-x"></i>
+                </div>
+                <div>
+
+                    <div>
+                        <label for="user">Username</label>
+                    </div>
+                    <div>
+                        <input required id="user" name="user" type="text">
+                    </div>
+                </div>
+                <div>
+
+                    <div>
+                        <label for="sauce">Password</label>
+                    </div>
+                    <div>
+                        <input required id="sauce" name="sauce" type="password">
+                    </div>
+                    <div>
+                        <p class="clickcursor">forgot your password?</p>
+                    </div>
+                </div>
+                <div>
+                    <button type="button" class="clickcursor">Sign in</button>
+                    <span class="clickcursor joinModal">Join now</span>
+                </div>
+            </div>
+            <div id="joinM">
+                <div class="formHeader">
+                    <h2>Sign Up</h2>
+                    <i class="closeModal clickcursor fa-solid fa-x"></i>
+                </div>
+                <div>
+
+                    <div>
+                        <label for="newName">Name</label>
+                    </div>
+                    <div>
+                        <input required id="newName" name="newName" type="text">
+                    </div>
+                </div>
+                <div>
+
+                    <div>
+                        <label for="newUser">Username</label>
+                    </div>
+                    <div>
+                        <input required id="newUser" name="newUser" type="text">
+                    </div>
+                </div>
+                <div>
+
+                    <div>
+                        <label for="newEmail">Email</label>
+                    </div>
+                    <div>
+                        <input required id="newEmail" name="newEmail" type="email">
+                    </div>
+                </div>
+                <div>
+
+                    <div>
+                        <label for="newSauce">Password</label>
+                    </div>
+                    <div>
+                        <input required id="newSauce" name="newSauce" type="password">
+                    </div>
+                </div>
+                <div>
+                    <button type="button" class="clickcursor">Sign up</button>
+                    <span class="clickcursor joinModal">Login</span>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</main>
+<footer>
+    <div>
+        <p>&copy; Copyright 2024. All Rights Reserved.</p>
+        <p><a href="mailto:251849@student.cofo.edu">251849@student.cofo.edu</a></p>
+    </div>
+</footer>
+<script src="js/modalControls.js"></script>
+</body>
+</html>
